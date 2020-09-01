@@ -1,7 +1,7 @@
-Fork note README
-===============
+Fork note
+=========
 
-Tulip fork note. To enable pulling images from private repo's we fork
+To enable pulling images from private repo's we fork
 https://github.com/vito/oci-build-task and install the aws-cli client and docker
 to enable authenticaing with our private ecr repo.
 
