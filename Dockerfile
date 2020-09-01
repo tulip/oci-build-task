@@ -14,6 +14,8 @@ FROM moby/buildkit:v0.7.2 AS task
   COPY --from=builder /assets/task /usr/bin/
   COPY --from=builder /assets/build /usr/bin/
   COPY bin/setup-cgroups /usr/bin/
+  RUN apk update && apk add --no-cache --no-progress python py-pip docker
+  RUN pip install --progress-bar off awscli
   ENTRYPOINT ["task"]
 
 FROM task
