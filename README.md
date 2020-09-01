@@ -1,3 +1,26 @@
+Fork note README
+===============
+
+Tulip fork note. To enable pulling images from private repo's we fork
+https://github.com/vito/oci-build-task and install the aws-cli client and docker
+to enable authenticaing with our private ecr repo.
+
+This is necessary until at least
+https://github.com/vito/oci-build-task/issues/14
+is resolved.
+
+To be honest both docker and aws-cli (which requires python) are rather big packages to install
+just for authentication. Docker can easily be replaced by writing a file with password, username
+and regsitry url to
+`/root/.docker/config.json` (or setting docker config some other way).
+
+aws-cli might be be replaceable by using
+`https://github.com/awslabs/amazon-ecr-credential-helper`
+instead, but this is as of yet untested.
+
+
+Original README
+===============
 # `oci-build` task
 
 A Concourse task for building [OCI
